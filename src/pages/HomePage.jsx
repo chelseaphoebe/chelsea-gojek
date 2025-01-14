@@ -4,25 +4,25 @@ import "../index.css";
 
 const statCardData = [
   {
-    image: "/public/assets/images/stat1.png",
+    image: "/assets/images/stat1.png",
     title: "190 million+",
     description: "app downloads since 2015",
     bgColor: "#7CCC6C",
   },
   {
-    image: "/public/assets/images/stat2.png",
+    image: "/assets/images/stat2.png",
     title: "2 million+",
     description: "driver partners",
     bgColor: "#D48BC8",
   },
   {
-    image: "/public/assets/images/stat3.png",
+    image: "/assets/images/stat3.png",
     title: "900,000+",
     description: "GoFood merchants",
     bgColor: "#FFAE62",
   },
   {
-    image: "/public/assets/images/stat4.png",
+    image: "/assets/images/stat4.png",
     title: "2.448x",
     description: "jump in downloads from 2015 to 2020",
     bgColor: "#4AC9E3",
@@ -31,23 +31,23 @@ const statCardData = [
 
 const overlayCardData = [
   {
-    image: "/public/assets/images/1.png",
+    image: "/assets/images/1.png",
     title: "Fortune’s favorite",
     description:
       "Southeast Asia’s only company to make it to Fortune’s ‘Change the World’ list twice.",
   },
   {
-    image: "/public/assets/images/2.png",
+    image: "/assets/images/2.png",
     title: "$7.1 b contribution",
     description: "Value added to the Indonesian economy in 2019.",
   },
   {
-    image: "/public/assets/images/3.png",
+    image: "/assets/images/3.png",
     title: "Tonne times greener",
     description: "Saved 11.3 tonnes of plastic in cutlery since October 2020.",
   },
   {
-    image: "/public/assets/images/4.png",
+    image: "/assets/images/4.png",
     title: "Digitising merchants",
     description:
       "Resulted in 80% growth in number of GoFood merchants during pandemic.",
