@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white px-8 sm:px-16 lg:px-32 pb-24">
       <img
         id="logo"
-        src="/public/assets/images/logo.png"
+        src="/assets/images/logo.png"
         alt="Gojek Logo"
         className="w-36 h-36 object-contain mx-auto sm:mx-0"
       />
@@ -83,21 +83,21 @@ const Footer = () => {
           <div className="flex space-x-4">
             <a href="#facebook">
               <img
-                src="/public/assets/images/facebook.png"
+                src="/assets/images/facebook.png"
                 alt="Facebook"
                 className="w-12 h-12"
               />
             </a>
             <a href="#twitter">
               <img
-                src="/public/assets/images/twitter.png"
+                src="/assets/images/twitter.png"
                 alt="Twitter"
                 className="w-12 h-12"
               />
             </a>
             <a href="#instagram">
               <img
-                src="/public/assets/images/ig.png"
+                src="/assets/images/ig.png"
                 alt="Instagram"
                 className="w-12 h-12"
               />
@@ -107,7 +107,7 @@ const Footer = () => {
               target="_blank"
             >
               <img
-                src="/public/assets/images/linkedin.png"
+                src="/assets/images/linkedin.png"
                 alt="LinkedIn"
                 className="w-12 h-12"
               />
@@ -119,14 +119,14 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a href="#playstore">
                 <img
-                  src="/public/assets/images/playstore.png"
+                  src="/assets/images/playstore.png"
                   alt="Google Play Store"
                   className="w-12 h-12"
                 />
               </a>
               <a href="#appstore">
                 <img
-                  src="/public/assets/images/appstore.png"
+                  src="/assets/images/appstore.png"
                   alt="Apple App Store"
                   className="w-12 h-12"
                 />
