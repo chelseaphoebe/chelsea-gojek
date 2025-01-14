@@ -7,8 +7,6 @@ const Blog = () => {
   const [news, setNews] = useState(dataNews);
 
   useEffect(() => {
-    // You can add any logic if needed for manipulating the local data
-    // For now, we're just setting the data from News.json to the state
     setNews(dataNews);
   }, []);
 
@@ -91,10 +89,10 @@ const Blog = () => {
                   key={data.url}
                   imageUrl={
                     data.urlToImage || "/assets/images/defaultImage.png"
-                  } // Default fallback image
-                  title={data.title || "No Title Available"} // Fallback if title is missing
-                  description={data.description || "No Description Available"} // Fallback if description is missing
-                  link={data.url || "#"} // Default link
+                  } 
+                  title={data.title || "No Title Available"} 
+                  description={data.description || "No Description Available"} 
+                  link={data.url || "#"} 
                 />
               ))}
             </div>

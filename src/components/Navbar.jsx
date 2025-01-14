@@ -19,8 +19,8 @@ const Navbar = () => {
         logo.classList.add("h-12");
         logo.classList.remove("h-16");
 
-        searchBar.classList.add("w-[25rem]", "py-1.5");
-        searchBar.classList.remove("w-[30rem]", "py-2.5");
+        searchBar?.classList.add("w-[25rem]", "py-1.5");
+        searchBar?.classList.remove("w-[30rem]", "py-2.5");
 
         navbarText.forEach((text) => {
           text.classList.add("text-sm");
@@ -33,13 +33,17 @@ const Navbar = () => {
         logo.classList.add("h-16");
         logo.classList.remove("h-12");
 
-        searchBar.classList.add("w-[30rem]", "py-2.5");
-        searchBar.classList.remove("w-[25rem]", "py-1.5");
+        searchBar?.classList.add("w-[30rem]", "py-2.5");
+        searchBar?.classList.remove("w-[25rem]", "py-1.5");
 
         navbarText.forEach((text) => {
           text.classList.add("text-base");
           text.classList.remove("text-sm");
         });
+      }
+
+      if (isMobileMenuOpen) {
+        setMobileMenuOpen(false);
       }
     };
 
@@ -47,7 +51,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isMobileMenuOpen]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -57,7 +61,7 @@ const Navbar = () => {
   return (
     <div
       id="navbar"
-      className="navbar fixed top-0 left-0 w-full py-6 px-5 flex justify-center items-center z-50 transition-all duration-300"
+      className="navbar fixed top-0 left-0 w-full h-[65px] flex justify-center items-center z-50 transition-all duration-300 sm:py-6 py-3 bg-gray-900 bg-transparent"
     >
       <img
         id="logo"
@@ -68,7 +72,7 @@ const Navbar = () => {
 
       <div
         id="searchBar"
-        className="w-[30rem] border border-gray-300 rounded-full flex items-center justify-between px-4 py-2.5 transition-all duration-300 hidden sm:flex"
+        className="hidden sm:flex w-[30rem] border border-gray-300 rounded-full items-center justify-between px-4 py-2.5 transition-all duration-300"
       >
         <Link
           to="/"
@@ -113,7 +117,7 @@ const Navbar = () => {
 
       <button
         onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-        className="sm:hidden absolute right-6 top-6 z-50"
+        className="sm:hidden absolute right-6 z-50"
       >
         <div className="w-6 h-0.5 bg-white mb-2"></div>
         <div className="w-6 h-0.5 bg-white mb-2"></div>
@@ -121,7 +125,7 @@ const Navbar = () => {
       </button>
 
       {isMobileMenuOpen && (
-        <div className="sm:hidden absolute top-16 left-0 right-0 bg-gray-900 py-4 flex flex-col items-center space-y-4">
+        <div className="sm:hidden absolute top-12 left-0 right-0 bg-gray-900 py-4 flex flex-col items-center space-y-4">
           <Link
             to="/"
             className="text-base font-medium text-white navbar-text"

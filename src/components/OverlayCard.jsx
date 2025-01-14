@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const OverlayCard = ({ image, title, description }) => {
   return (
-    <div className="card text-center w-64">
+    <div className="card text-center w-64 pb-8 pt-6 lg:pt-2">
       <img
         src={image}
         alt={title}

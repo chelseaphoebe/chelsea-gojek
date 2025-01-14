@@ -1,5 +1,11 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import OverlayCard from "../components/OverlayCard";
 import StatCard from "../components/StatCard";
+import "/assets/images/homepage1.jpg";
 import "../index.css";
 
 const statCardData = [
@@ -53,7 +59,6 @@ const overlayCardData = [
       "Resulted in 80% growth in number of GoFood merchants during pandemic.",
   },
 ];
-
 const HomePage = () => {
   return (
     <>
@@ -63,13 +68,13 @@ const HomePage = () => {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/homepage1.jpg')`,
         }}
       >
-        <p className="text-white text-2xl sm:text-3xl md:text-5xl font-semibold text-center tracking-wide banner-text">
+        <p className="text-white text-xl md:text-3xl lg:text-5xl px-6 lg:px-0 font-semibold text-center tracking-wide banner-text">
           3 countries. 20+ products. 1 leading on-demand platform.
         </p>
       </div>
 
       <div className="bg-gray-900 text-white text-center py-12 relative">
-        <h1 className="text-2xl md:text-5xl font-bold mb-6">
+        <h1 className="text-2xl md:text-5xl font-bold mb-6 px-8 md:px-0">
           We’re Gojek, the drivers of change
         </h1>
         <a
@@ -81,8 +86,30 @@ const HomePage = () => {
         </a>
 
         <div className="bg-white rounded-t-[100px] mt-20 h-[260px] relative z-10 px-4 lg:px-12">
-          <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 flex w-full justify-center items-center overflow-x-auto sm:overflow-x-hidden">
-            <div className="flex gap-6 sm:gap-8">
+          <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-full">
+            <Swiper
+              modules={[Navigation, Pagination]}
+              navigation
+              pagination={{ clickable: true }}
+              spaceBetween={20}
+              slidesPerView={1}
+              breakpoints={{
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+              className="lg:hidden w-full"
+            >
+              {overlayCardData.map((data, index) => (
+                <SwiperSlide
+                  key={index}
+                  className="flex justify-center items-center"
+                >
+                  <OverlayCard {...data} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            <div className="hidden px-24 lg:grid grid-cols-4 gap-8">
               {overlayCardData.map((data, index) => (
                 <OverlayCard key={index} {...data} />
               ))}
@@ -92,17 +119,17 @@ const HomePage = () => {
 
         <div className="bg-white text-black h-auto text-center px-12 md:px-0 py-12">
           <h1 className="text-3xl md:text-5xl font-bold mb-6">
-            We’re Gojek, the drivers of change
+            We scale like a dream
           </h1>
           <a
             href="/Careers"
             className="text-white px-6 py-3 rounded-3xl font-medium hover:bg-green-600 transition"
             style={{ backgroundColor: "rgb(0, 136, 13)" }}
           >
-            Go to Careers
+            Scale with us
           </a>
 
-          <div className="mt-32 flex justify-center gap-8 px-6 flex-wrap">
+          <div className="mt-32 flex justify-center gap-24 lg:gap-8 px-6 flex-wrap">
             {statCardData.map((data, index) => (
               <StatCard key={index} {...data} />
             ))}
