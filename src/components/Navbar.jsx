@@ -61,7 +61,7 @@ const Navbar = () => {
     >
       <img
         id="logo"
-        src="/assets/images/logo.png"
+        src="/public/assets/images/logo.png"
         alt="Gojek Logo"
         className="absolute h-16 left-6 transition-all duration-300"
       />
