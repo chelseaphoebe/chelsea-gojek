@@ -1,29 +1,28 @@
 import OverlayCard from "../components/OverlayCard";
 import StatCard from "../components/StatCard";
-import "../assets/images/homepage1.jpg";
 import "../index.css";
 
 const statCardData = [
   {
-    image: "/src/assets/images/stat1.png",
+    image: "/public/assets/images/stat1.png",
     title: "190 million+",
     description: "app downloads since 2015",
     bgColor: "#7CCC6C",
   },
   {
-    image: "/src/assets/images/stat2.png",
+    image: "/public/assets/images/stat2.png",
     title: "2 million+",
     description: "driver partners",
     bgColor: "#D48BC8",
   },
   {
-    image: "/src/assets/images/stat3.png",
+    image: "/public/assets/images/stat3.png",
     title: "900,000+",
     description: "GoFood merchants",
     bgColor: "#FFAE62",
   },
   {
-    image: "/src/assets/images/stat4.png",
+    image: "/public/assets/images/stat4.png",
     title: "2.448x",
     description: "jump in downloads from 2015 to 2020",
     bgColor: "#4AC9E3",
@@ -32,23 +31,23 @@ const statCardData = [
 
 const overlayCardData = [
   {
-    image: "/src/assets/images/1.png",
+    image: "/public/assets/images/1.png",
     title: "Fortune’s favorite",
     description:
       "Southeast Asia’s only company to make it to Fortune’s ‘Change the World’ list twice.",
   },
   {
-    image: "/src/assets/images/2.png",
+    image: "/public/assets/images/2.png",
     title: "$7.1 b contribution",
     description: "Value added to the Indonesian economy in 2019.",
   },
   {
-    image: "/src/assets/images/3.png",
+    image: "/public/assets/images/3.png",
     title: "Tonne times greener",
     description: "Saved 11.3 tonnes of plastic in cutlery since October 2020.",
   },
   {
-    image: "/src/assets/images/4.png",
+    image: "/public/assets/images/4.png",
     title: "Digitising merchants",
     description:
       "Resulted in 80% growth in number of GoFood merchants during pandemic.",
@@ -61,7 +60,7 @@ const HomePage = () => {
       <div
         className="bg-center bg-cover bg-no-repeat min-h-screen md:px-52 flex items-center justify-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/src/assets/images/homepage1.jpg')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/homepage1.jpg')`,
         }}
       >
         <p className="text-white text-2xl sm:text-3xl md:text-5xl font-semibold text-center tracking-wide banner-text">
