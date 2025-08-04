@@ -162,7 +162,7 @@ const Careers = () => {
         {showMap && (
           <iframe
             title="Google Maps"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.0074392163943!2d110.41456181533583!3d-7.801208994373899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5790f2b2b2a3%3A0x4f46b4e9e9e122a8!2sYogyakarta%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1673421234567!5m2!1sen!2sid"
+            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d253816.01764648498!2d106.47302734834462!3d-6.280123461382273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgojek!5e0!3m2!1sen!2sid!4v1754319916591!5m2!1sen!2sid"
             width="100%"
             height="400"
             style={{ border: 0 }}
