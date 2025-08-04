@@ -51,7 +51,7 @@ const Navbar = () => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    setMobileMenuOpen(false); 
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -61,7 +61,7 @@ const Navbar = () => {
     >
       <img
         id="logo"
-        src="/src/assets/images/logo.png"
+        src="/images/logo.png"
         alt="Gojek Logo"
         className="absolute h-16 left-6 transition-all duration-300"
       />

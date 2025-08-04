@@ -1,5 +1,3 @@
-import "../assets/images/download.png";
-
 const Download = () => {
   return (
     <>
@@ -7,7 +5,7 @@ const Download = () => {
       <div
         className="bg-center bg-cover bg-no-repeat min-h-screen flex flex-col items-start justify-center pl-10 relative"
         style={{
-          backgroundImage: `url('/src/assets/images/download.png')`,
+          backgroundImage: `url('/images/download.png')`,
         }}
       >
         <div className="absolute inset-0 bg-black opacity-60 sm:opacity-0"></div>

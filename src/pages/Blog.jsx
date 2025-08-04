@@ -132,55 +132,55 @@ const Blog = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl py-8">
           <BlogCard
-            imageUrl="/src/assets/images/blog1.png"
+            imageUrl="/images/blog1.png"
             title="Promo MAKSIMAL GoFood: Diskon Makan Siang & Malam + Flash Sale Tiga Kali Sehari!"
             description="Gofood / 09 Jan 2025"
             link="https://www.gojek.com/blog/gofood/promo-maksimal-gofood-menu-diskon-50-persen"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog2.png"
+            imageUrl="/images/blog2.png"
             title="Makin hemat pakai GoRide Hemat di GoTransit"
             description="Gotransit / 06 Jan 2025"
             link="https://www.gojek.com/blog/gotransit/goridehemat-gotransit"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog3.png"
+            imageUrl="/images/blog3.png"
             title="Ada yang baruu! Saatnya belanja apa aja di Website GoMart"
             description="Gomart / 03 Jan 2025"
             link="https://www.gojek.com/blog/gomart/belanja-gomart-lewat-desktop"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog4.png"
+            imageUrl="/images/blog4.png"
             title="Mau jalan-jalan ke Singapura Bareng Besties?"
             description="Gojek / 26 Dec 2024"
             link="https://www.gojek.com/blog/gojek/ke-singapura-bareng-teman"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog5.png"
+            imageUrl="/images/blog5.png"
             title="Eksplor Singapura Bareng Keluarga!"
             description="Gojek / 26 Dec 2024"
             link="https://www.gojek.com/blog/gojek/ke-singapura-bareng-keluarga"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog6.png"
+            imageUrl="/images/blog6.png"
             title="Flash Sale Spesial Gajian Desember di GoFood, Hemat s.d 50% untuk Menu Favorit!"
             description="Gofood / 25 Dec 2024"
             link="https://www.gojek.com/blog/gofood/flash-sale-gajian-desember-menu-diskon-50-persen"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog7.png"
+            imageUrl="/images/blog7.png"
             title="LOMBA MAKAN Akhir Tahun Dapet Iphone 15 Pro & Emas"
             description="Gofood / 19 Dec 2024"
             link="https://www.gojek.com/blog/gofood/lomba-makan-dari-gofood"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog8.png"
+            imageUrl="/images/blog8.png"
             title="Pilihan Tepat untuk Liburan yang Tak Terlupakan Bareng Gojek dan Archipelago Hotels!"
             description="Gojek / 17 Dec 2024"
             link="https://www.gojek.com/blog/gojek/yuklibur-gojek-archipelago"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog9.png"
+            imageUrl="/images/blog9.png"
             title="Pakai GoRide dan beli tiket Commuterline bisa sekaligus pakai GoTransit"
             description="Gotransit / 17 Dec 2024"
             link="https://www.gojek.com/blog/gotransit/goride-transit"
@@ -226,14 +226,6 @@ const Blog = () => {
                     >
                       {Math.round(weather.main.temp)}°C
                     </p>
-                    {/* <p
-                      className={`text-xl capitalize px-3 py-1 rounded-full inline-block ${
-                        getWeatherStyles(weather.weather[0].main, weatherIcon)
-                          .detailBg
-                      }`}
-                    >
-                      {weather.weather[0].description}
-                    </p> */}
                   </div>
                 </div>
 
@@ -293,7 +285,7 @@ const Blog = () => {
               ))}
             </div>
           </div>
-          <div className="md:w-1/3 order-first md:order-none md:h-screen top-0 md:sticky relative bg-[url('/src/assets/images/bgNews.png')] bg-cover bg-blend-darken flex justify-center items-center flex-col">
+          <div className="md:w-1/3 order-first md:order-none md:h-screen top-0 md:sticky relative bg-[url('/images/bgNews.png')] bg-cover bg-blend-darken flex justify-center items-center flex-col">
             <div className="absolute inset-0 bg-black bg-opacity-30"></div>
             <div className="relative z-10 text-center p-6">
               <h1 className="text-white text-3xl md:text-4xl font-bold drop-shadow-md text-center my-2">

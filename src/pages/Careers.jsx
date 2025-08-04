@@ -28,7 +28,7 @@ const columns = [
 const Careers = () => {
   const [filterLocation, setFilterLocation] = useState("");
   const [globalFilter, setGlobalFilter] = useState("");
-  const [showMap, setShowMap] = useState(false); 
+  const [showMap, setShowMap] = useState(false);
 
   const filteredData = useMemo(() => {
     return filterLocation
@@ -49,7 +49,7 @@ const Careers = () => {
     <div className="bg-gray-900">
       <div className="flex flex-col lg:flex-row items-center lg:pl-44 pt-24 px-4 sm:px-12">
         <img
-          src="./src/assets/images/careers.png"
+          src="/images/careers.png"
           alt="Careers"
           className="w-[300px] sm:w-[400px] h-auto mb-4"
         />
