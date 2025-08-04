@@ -3,6 +3,18 @@ import axios from "axios";
 import BlogCard from "../components/BlogCard";
 import { NewsCard } from "../components/NewsCard";
 
+// Import all images
+import blog1 from "../assets/images/blog1.png";
+import blog2 from "../assets/images/blog2.png";
+import blog3 from "../assets/images/blog3.png";
+import blog4 from "../assets/images/blog4.png";
+import blog5 from "../assets/images/blog5.png";
+import blog6 from "../assets/images/blog6.png";
+import blog7 from "../assets/images/blog7.png";
+import blog8 from "../assets/images/blog8.png";
+import blog9 from "../assets/images/blog9.png";
+import bgNews from "../assets/images/bgNews.png";
+
 const Blog = () => {
   const [news, setNews] = useState([]);
   const [weather, setWeather] = useState(null);
@@ -21,7 +33,7 @@ const Blog = () => {
           article.url
         );
       });
-      setNews(validNews.slice(0, 10));
+      setNews(validNews.slice(0, 10)); 
     } catch (error) {
       console.error("Error fetching news:", error);
     }
@@ -132,55 +144,55 @@ const Blog = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl py-8">
           <BlogCard
-            imageUrl="/src/assets/images/blog1.png"
+            imageUrl={blog1}
             title="Promo MAKSIMAL GoFood: Diskon Makan Siang & Malam + Flash Sale Tiga Kali Sehari!"
             description="Gofood / 09 Jan 2025"
             link="https://www.gojek.com/blog/gofood/promo-maksimal-gofood-menu-diskon-50-persen"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog2.png"
+            imageUrl={blog2}
             title="Makin hemat pakai GoRide Hemat di GoTransit"
             description="Gotransit / 06 Jan 2025"
             link="https://www.gojek.com/blog/gotransit/goridehemat-gotransit"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog3.png"
+            imageUrl={blog3}
             title="Ada yang baruu! Saatnya belanja apa aja di Website GoMart"
             description="Gomart / 03 Jan 2025"
             link="https://www.gojek.com/blog/gomart/belanja-gomart-lewat-desktop"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog4.png"
+            imageUrl={blog4}
             title="Mau jalan-jalan ke Singapura Bareng Besties?"
             description="Gojek / 26 Dec 2024"
             link="https://www.gojek.com/blog/gojek/ke-singapura-bareng-teman"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog5.png"
+            imageUrl={blog5}
             title="Eksplor Singapura Bareng Keluarga!"
             description="Gojek / 26 Dec 2024"
             link="https://www.gojek.com/blog/gojek/ke-singapura-bareng-keluarga"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog6.png"
+            imageUrl={blog6}
             title="Flash Sale Spesial Gajian Desember di GoFood, Hemat s.d 50% untuk Menu Favorit!"
             description="Gofood / 25 Dec 2024"
             link="https://www.gojek.com/blog/gofood/flash-sale-gajian-desember-menu-diskon-50-persen"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog7.png"
+            imageUrl={blog7}
             title="LOMBA MAKAN Akhir Tahun Dapet Iphone 15 Pro & Emas"
             description="Gofood / 19 Dec 2024"
             link="https://www.gojek.com/blog/gofood/lomba-makan-dari-gofood"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog8.png"
+            imageUrl={blog8}
             title="Pilihan Tepat untuk Liburan yang Tak Terlupakan Bareng Gojek dan Archipelago Hotels!"
             description="Gojek / 17 Dec 2024"
             link="https://www.gojek.com/blog/gojek/yuklibur-gojek-archipelago"
           />
           <BlogCard
-            imageUrl="/src/assets/images/blog9.png"
+            imageUrl={blog9}
             title="Pakai GoRide dan beli tiket Commuterline bisa sekaligus pakai GoTransit"
             description="Gotransit / 17 Dec 2024"
             link="https://www.gojek.com/blog/gotransit/goride-transit"
@@ -226,14 +238,6 @@ const Blog = () => {
                     >
                       {Math.round(weather.main.temp)}°C
                     </p>
-                    {/* <p
-                      className={`text-xl capitalize px-3 py-1 rounded-full inline-block ${
-                        getWeatherStyles(weather.weather[0].main, weatherIcon)
-                          .detailBg
-                      }`}
-                    >
-                      {weather.weather[0].description}
-                    </p> */}
                   </div>
                 </div>
 
@@ -281,7 +285,7 @@ const Blog = () => {
           className="flex flex-col md:flex-row w-full max-w-6xl"
         >
           <div className="md:w-2/3">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto my-10 md:px-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto my-10 md:px-10">
               {news.map((data, index) => (
                 <NewsCard
                   key={index}
@@ -293,13 +297,18 @@ const Blog = () => {
               ))}
             </div>
           </div>
-          <div className="md:w-1/3 order-first md:order-none md:h-screen top-0 md:sticky relative bg-[url('/src/assets/images/bgNews.png')] bg-cover bg-blend-darken flex justify-center items-center flex-col">
+          <div className="md:w-1/3 order-first md:order-none md:h-screen top-0 md:sticky relative bg-blend-darken flex justify-center items-center flex-col">
+            <img
+              src={bgNews}
+              alt="News Background"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-            <div className="relative z-10 text-center p-6">
-              <h1 className="text-white text-3xl md:text-4xl font-bold drop-shadow-md text-center my-2">
+            <div className="relative z-10 text-center">
+              <h1 className="text-white text-3xl font-bold drop-shadow-md text-center my-2 mx-12 md:px-0">
                 News
               </h1>
-              <p className="text-white text-lg font-normal drop-shadow-md">
+              <p className="text-white text-lg font-normal drop-shadow-md mx-10">
                 Our stories, latest updates, and exclusive promos. Find anything
                 you want to know about us.
               </p>
