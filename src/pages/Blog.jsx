@@ -11,7 +11,7 @@ const Blog = () => {
   const fetchNews = async () => {
     try {
      const response = await axios.get(
-       `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
+       `https://newsapi.org/v2/top-headlines?country=us&apiKey=8cf3d5a1690549f6aa7130dcaec92f7a`
      );
       const validNews = response.data.articles.filter((article) => {
         return (
