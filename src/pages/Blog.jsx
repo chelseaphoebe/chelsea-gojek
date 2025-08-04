@@ -33,7 +33,7 @@ const Blog = () => {
           article.url
         );
       });
-      setNews(validNews.slice(0, 10));
+      setNews(validNews.slice(0, 10)); 
     } catch (error) {
       console.error("Error fetching news:", error);
     }
@@ -298,9 +298,9 @@ const Blog = () => {
             </div>
           </div>
           <div className="md:w-1/3 order-first md:order-none md:h-screen top-0 md:sticky relative bg-blend-darken flex justify-center items-center flex-col">
-            <img 
-              src={bgNews} 
-              alt="News Background" 
+            <img
+              src={bgNews}
+              alt="News Background"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-30"></div>
