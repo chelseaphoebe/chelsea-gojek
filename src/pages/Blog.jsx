@@ -10,9 +10,9 @@ const Blog = () => {
 
   const fetchNews = async () => {
     try {
-      const response = await axios.get(
-        `https://newsapi.org/v2/top-headlines?country=us&apiKey=c6c8db1d6e114390bf336f0f13312dc7`
-      );
+     const response = await axios.get(
+       `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
+     );
       const validNews = response.data.articles.filter((article) => {
         return (
           article.urlToImage &&
@@ -45,7 +45,6 @@ const Blog = () => {
     fetchWeather("Jakarta");
   }, []);
 
-  // Fungsi untuk menentukan gaya berdasarkan kondisi cuaca
   const getWeatherStyles = (weatherMain, iconCode) => {
     const styles = {
       bgClass: "bg-gray-900 border",
