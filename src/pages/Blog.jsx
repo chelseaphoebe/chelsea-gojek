@@ -8,24 +8,24 @@ const Blog = () => {
   const [weather, setWeather] = useState(null);
   const [weatherIcon, setWeatherIcon] = useState("");
 
-  const fetchNews = async () => {
-    try {
-      const response = await axios.get(
-        `https://newsdata.io/api/1/news?apikey=pub_5e0aad218a4c48d68858991a79a5c54d&country=us&language=en`
-      );
-      const validNews = response.data.results.filter((article) => {
-        return (
-          article.image_url &&
-          article.title &&
-          article.description &&
-          article.link
-        );
-      });
-      setNews(validNews.slice(0, 10));
-    } catch (error) {
-      console.error("Error fetching news:", error);
-    }
-  };
+ const fetchNews = async () => {
+   try {
+     const response = await axios.get(
+       `https://newsdata.io/api/1/news?apikey=pub_5e0aad218a4c48d68858991a79a5c54d&country=id&language=id`
+     );
+     const validNews = response.data.results.filter((article) => {
+       return (
+         article.image_url &&
+         article.title &&
+         article.description &&
+         article.link
+       );
+     });
+     setNews(validNews.slice(0, 10));
+   } catch (error) {
+     console.error("Error fetching news:", error);
+   }
+ };
 
   const fetchWeather = async (city) => {
     const weatherApiKey = "87b63a55d2a83c6c0dd63ce8085fb648";
