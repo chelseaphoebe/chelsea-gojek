@@ -10,15 +10,15 @@ const Blog = () => {
 
   const fetchNews = async () => {
     try {
-     const response = await axios.get(
-       `https://newsapi.org/v2/top-headlines?country=us&apiKey=8cf3d5a1690549f6aa7130dcaec92f7a`
-     );
-      const validNews = response.data.articles.filter((article) => {
+      const response = await axios.get(
+        `https://newsdata.io/api/1/news?apikey=pub_5e0aad218a4c48d68858991a79a5c54d&country=us&language=en`
+      );
+      const validNews = response.data.results.filter((article) => {
         return (
-          article.urlToImage &&
+          article.image_url &&
           article.title &&
           article.description &&
-          article.url
+          article.link
         );
       });
       setNews(validNews.slice(0, 10));
@@ -276,10 +276,10 @@ const Blog = () => {
               {news.map((data, index) => (
                 <NewsCard
                   key={index}
-                  imageUrl={data.urlToImage}
+                  imageUrl={data.image_url}
                   title={data.title}
                   description={data.description}
-                  link={data.url}
+                  link={data.link}
                 />
               ))}
             </div>
