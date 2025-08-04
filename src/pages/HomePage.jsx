@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import OverlayCard from "../components/OverlayCard";
 import StatCard from "../components/StatCard";
 import "../index.css";
@@ -55,61 +57,131 @@ const overlayCardData = [
 ];
 
 const HomePage = () => {
+  const [bannerRef, bannerInView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+  const [overlayRef, overlayInView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+  const [statsRef, statsInView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
-    <>
-      <div
+    <div className="overflow-hidden">
+      <motion.div
+        ref={bannerRef}
         className="bg-center bg-cover bg-no-repeat min-h-screen md:px-52 flex items-center justify-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/homepage1.jpg')`,
         }}
+        initial={{ opacity: 0 }}
+        animate={bannerInView ? { opacity: 1 } : {}}
+        transition={{ duration: 1 }}
       >
-        <p className="text-white text-2xl sm:text-3xl md:text-5xl font-semibold text-center tracking-wide banner-text">
+        <motion.p
+          className="text-white text-2xl sm:text-3xl md:text-5xl font-semibold text-center tracking-wide banner-text"
+          initial={{ y: 30, opacity: 0 }}
+          animate={bannerInView ? { y: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
           3 countries. 20+ products. 1 leading on-demand platform.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
       <div className="bg-gray-900 text-white text-center py-12 relative">
-        <h1 className="text-2xl md:text-5xl font-bold mb-6">
+        <motion.h1
+          className="text-2xl md:text-5xl font-bold mb-6"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
           We're Gojek, the drivers of change
-        </h1>
-        <a
+        </motion.h1>
+
+        <motion.a
           href="/Careers"
           className="text-white px-6 py-3 rounded-3xl font-medium hover:bg-green-600 transition"
           style={{ backgroundColor: "rgb(0, 136, 13)" }}
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
           Explore Careers
-        </a>
+        </motion.a>
 
         <div className="bg-white rounded-t-[100px] mt-20 h-[260px] relative z-10 px-4 lg:px-12">
-          <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 flex w-full justify-center items-center overflow-x-auto sm:overflow-x-hidden">
+          <div
+            ref={overlayRef}
+            className="absolute -top-20 left-1/2 transform -translate-x-1/2 flex w-full justify-center items-center overflow-x-auto sm:overflow-x-hidden"
+          >
             <div className="flex gap-6 sm:gap-8">
               {overlayCardData.map((data, index) => (
-                <OverlayCard key={index} {...data} />
+                <motion.div
+                  key={index}
+                  initial={{ y: 40, opacity: 0 }}
+                  animate={
+                    overlayInView
+                      ? {
+                          y: 0,
+                          opacity: 1,
+                        }
+                      : {}
+                  }
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.2,
+                  }}
+                >
+                  <OverlayCard {...data} />
+                </motion.div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="bg-white text-black h-auto text-center px-12 md:px-0 py-12">
-          <h1 className="text-3xl md:text-5xl font-bold mb-6">
+        <div
+          ref={statsRef}
+          className="bg-white text-black h-auto text-center px-12 md:px-0 py-12"
+        >
+          <motion.h1
+            className="text-3xl md:text-5xl font-bold mb-6"
+            initial={{ y: 20, opacity: 0 }}
+            animate={statsInView ? { y: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.6 }}
+          >
             We're Gojek, the drivers of change
-          </h1>
-          <a
+          </motion.h1>
+
+          <motion.a
             href="/Careers"
             className="text-white px-6 py-3 rounded-3xl font-medium hover:bg-green-600 transition"
             style={{ backgroundColor: "rgb(0, 136, 13)" }}
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={statsInView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             Go to Careers
-          </a>
+          </motion.a>
 
           <div className="mt-32 flex justify-center gap-8 px-6 flex-wrap">
             {statCardData.map((data, index) => (
-              <StatCard key={index} {...data} />
+              <motion.div
+                key={index}
+                initial={{ y: 40, opacity: 0 }}
+                animate={statsInView ? { y: 0, opacity: 1 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <StatCard {...data} />
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
